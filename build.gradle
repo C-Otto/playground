@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'pmd'
+    id 'net.ltgt.errorprone' version '1.1.1'
+    id 'net.ltgt.nullaway' version '1.0.1'
+    id 'de.aaschmid.cpd' version '3.1'
+    id 'com.github.spotbugs' version '4.0.5'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_14
+    targetCompatibility = JavaVersion.VERSION_14
+}
+
+group 'de.cotto'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    errorprone 'com.google.errorprone:error_prone_core:latest.release'
+    errorprone 'com.uber.nullaway:nullaway:latest.release'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
+    testImplementation 'org.assertj:assertj-core:latest.release'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+nullaway {
+    annotatedPackages.add('de.cotto')
+}
+
+pmd {
+    toolVersion = '6.22.0'
+    ruleSetFiles = files('config/pmd-ruleset.xml')
+    ruleSets = []
+}
+
+checkstyle {
+    toolVersion 'latest.release';
+}

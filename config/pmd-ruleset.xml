@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Custom rules
+    </description>
+
+    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="MethodArgumentCouldBeFinal"/>
+        <exclude name="OnlyOneReturn"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="UnnecessaryConstructor"/>
+        <exclude name="CommentDefaultAccessModifier"/>
+
+        <exclude name="AtLeastOneConstructor"/>
+        <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
+            <properties>
+                <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
+                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
+            </properties>
+        </rule>
+
+        <exclude name="DefaultPackage"/>
+        <rule ref="category/java/codestyle.xml/DefaultPackage">
+            <properties>
+                <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[@Interface='false']/ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration
+                    [not(Annotation//Name[ends-with(@Image, 'BeforeEach')] or Annotation//Name[ends-with(@Image, 'Test')])]"/>
+            </properties>
+        </rule>
+
+
+    </rule>
+
+    <rule ref="category/java/design.xml">
+        <exclude name="LoosePackageCoupling"/>
+        <exclude name="LawOfDemeter"/>
+        <rule ref="category/java/design.xml/LawOfDemeter">
+            <properties>
+                <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
+                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
+            </properties>
+        </rule>
+    </rule>
+    <rule ref="category/java/documentation.xml">
+        <exclude name="CommentRequired"/>
+    </rule>
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="BeanMembersShouldSerialize"/>
+        <rule ref="category/java/errorprone.xml/BeanMembersShouldSerialize">
+            <properties>
+                <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
+                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
+            </properties>
+        </rule>
+    </rule>
+    <rule ref="category/java/multithreading.xml"/>
+    <rule ref="category/java/performance.xml"/>
+    <rule ref="category/java/security.xml"/>
+
+</ruleset>
