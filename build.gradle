@@ -34,6 +34,10 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(Test) {
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+}
+
 nullaway {
     annotatedPackages.add('de.cotto')
 }
