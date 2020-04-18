@@ -49,5 +49,6 @@ pmd {
 }
 
 checkstyle {
-    toolVersion 'latest.release';
+    toolVersion 'latest.release'
+    maxWarnings = 0
 }
