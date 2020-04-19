@@ -7,3 +7,4 @@ A simple project combining
  * Checkstyle
  * PMD
  * CPD
+ * JaCoCo

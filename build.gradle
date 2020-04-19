@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'checkstyle'
     id 'pmd'
+    id 'jacoco'
     id 'net.ltgt.errorprone' version '1.1.1'
     id 'net.ltgt.nullaway' version '1.0.1'
     id 'de.aaschmid.cpd' version '3.1'
@@ -51,4 +52,38 @@ pmd {
 checkstyle {
     toolVersion 'latest.release'
     maxWarnings = 0
+}
+
+check.dependsOn jacocoTestCoverageVerification
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.9
+            }
+        }
+        rule {
+            limit {
+                counter = 'CLASS'
+                value = 'COVEREDRATIO'
+                minimum = 1.0
+            }
+        }
+        rule {
+            limit {
+                counter = 'INSTRUCTION'
+                value = 'COVEREDRATIO'
+                minimum = 0.9
+            }
+        }
+        rule {
+            limit {
+                counter = 'METHOD'
+                value = 'COVEREDRATIO'
+                minimum = 1.0
+            }
+        }
+    }
 }
