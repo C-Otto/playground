@@ -33,6 +33,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    afterTest { descriptor, result ->
+        if (result.resultType == TestResult.ResultType.SKIPPED) {
+            throw new GradleException("Do not ignore test cases")
+        }
+    }
 }
 
 tasks.withType(Test) {
