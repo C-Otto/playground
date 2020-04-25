@@ -31,6 +31,12 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
 }
 
+tasks.withType(JavaCompile) {
+    options.errorprone.nullaway {
+        severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
+    }
+}
+
 test {
     useJUnitPlatform()
     afterTest { descriptor, result ->
