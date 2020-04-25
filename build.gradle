@@ -34,6 +34,8 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.errorprone.nullaway {
         severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
+        excludedFieldAnnotations.add('org.mockito.Mock')
+        excludedFieldAnnotations.add('org.mockito.InjectMocks')
     }
 }
 
