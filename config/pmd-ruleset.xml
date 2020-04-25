@@ -12,10 +12,17 @@
     <rule ref="category/java/bestpractices.xml">
         <!-- Redefined below-->
         <exclude name="JUnitTestsShouldIncludeAssert"/>
+        <exclude name="JUnitTestContainsTooManyAsserts"/>
     </rule>
     <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
         <properties>
-            <property name="violationSuppressXPath" value="./ancestor::ClassOrInterfaceBodyDeclaration//MethodDeclarator[@Image = 'testEquals']"/>
+            <property name="violationSuppressXPath"
+                      value="./ancestor::ClassOrInterfaceBodyDeclaration//MethodDeclarator[@Image = 'testEquals']"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+        <properties>
+            <property name="maximumAsserts" value="2"/>
         </properties>
     </rule>
 
@@ -33,12 +40,14 @@
     </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
+            <property name="violationSuppressXPath"
+                      value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/DefaultPackage">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
+            <property name="violationSuppressXPath"
+                      value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/LongVariable">
@@ -56,7 +65,8 @@
     </rule>
     <rule ref="category/java/design.xml/TooManyMethods">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
+            <property name="violationSuppressXPath"
+                      value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
 
