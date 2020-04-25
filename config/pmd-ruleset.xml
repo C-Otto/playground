@@ -10,6 +10,7 @@
     </description>
 
     <rule ref="category/java/bestpractices.xml"/>
+
     <rule ref="category/java/codestyle.xml">
         <exclude name="MethodArgumentCouldBeFinal"/>
         <exclude name="OnlyOneReturn"/>
@@ -17,21 +18,19 @@
         <exclude name="UnnecessaryConstructor"/>
         <exclude name="CommentDefaultAccessModifier"/>
 
+        <!-- Redefined below-->
         <exclude name="AtLeastOneConstructor"/>
         <exclude name="DefaultPackage"/>
         <exclude name="LongVariable"/>
     </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
-                matches(@SimpleName, 'IT') or
-                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
+            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/DefaultPackage">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[@Interface='false']/ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration
-                    [not(Annotation//Name[ends-with(@Image, 'BeforeEach')] or Annotation//Name[ends-with(@Image, 'Test')])]"/>
+            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/LongVariable">
@@ -42,30 +41,27 @@
 
     <rule ref="category/java/design.xml">
         <exclude name="LoosePackageCoupling"/>
+
+        <!-- Redefined below-->
         <exclude name="LawOfDemeter"/>
     </rule>
     <rule ref="category/java/design.xml/LawOfDemeter">
         <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
-                matches(@SimpleName, 'IT') or
-                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
+            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
         </properties>
     </rule>
+
     <rule ref="category/java/documentation.xml">
         <exclude name="CommentRequired"/>
     </rule>
+
     <rule ref="category/java/errorprone.xml">
         <exclude name="BeanMembersShouldSerialize"/>
     </rule>
-    <rule ref="category/java/errorprone.xml/BeanMembersShouldSerialize">
-        <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[matches(@SimpleName, 'Test') or
-                matches(@SimpleName, 'IT') or
-                ExtendsList/ClassOrInterfaceType[pmd-java:typeIs('junit.framework.TestCase')]]"/>
-        </properties>
-    </rule>
-    <rule ref="category/java/multithreading.xml"/>
-    <rule ref="category/java/performance.xml"/>
-    <rule ref="category/java/security.xml"/>
 
+    <rule ref="category/java/multithreading.xml"/>
+
+    <rule ref="category/java/performance.xml"/>
+
+    <rule ref="category/java/security.xml"/>
 </ruleset>
