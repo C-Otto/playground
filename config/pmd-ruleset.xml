@@ -49,14 +49,7 @@
 
     <rule ref="category/java/design.xml">
         <exclude name="LoosePackageCoupling"/>
-
-        <!-- Redefined below-->
         <exclude name="LawOfDemeter"/>
-    </rule>
-    <rule ref="category/java/design.xml/LawOfDemeter">
-        <properties>
-            <property name="violationSuppressXPath" value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
-        </properties>
     </rule>
 
     <rule ref="category/java/documentation.xml">
