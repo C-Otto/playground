@@ -102,3 +102,12 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+spotbugsMain.reports.configure {
+    xml.enabled = false
+    html.enabled = true
+}
+spotbugsTest.reports.configure {
+    xml.enabled = false
+    html.enabled = true
+}
