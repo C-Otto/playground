@@ -17,7 +17,7 @@
     <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
         <properties>
             <property name="violationSuppressXPath"
-                      value="./ancestor::ClassOrInterfaceBodyDeclaration//MethodDeclarator[@Image = 'testEquals']"/>
+                      value="./ancestor::ClassOrInterfaceBodyDeclaration//MethodDeclaration[@Name = 'testEquals']"/>
         </properties>
     </rule>
     <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
