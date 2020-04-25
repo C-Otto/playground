@@ -9,7 +9,15 @@
         Custom rules
     </description>
 
-    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/bestpractices.xml">
+        <!-- Redefined below-->
+        <exclude name="JUnitTestsShouldIncludeAssert"/>
+    </rule>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
+        <properties>
+            <property name="violationSuppressXPath" value="./ancestor::ClassOrInterfaceBodyDeclaration//MethodDeclarator[@Image = 'testEquals']"/>
+        </properties>
+    </rule>
 
     <rule ref="category/java/codestyle.xml">
         <exclude name="MethodArgumentCouldBeFinal"/>
