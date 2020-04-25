@@ -37,6 +37,7 @@ tasks.withType(JavaCompile) {
         excludedFieldAnnotations.add('org.mockito.Mock')
         excludedFieldAnnotations.add('org.mockito.InjectMocks')
     }
+    options.compilerArgs << "-Werror"
 }
 
 test {
