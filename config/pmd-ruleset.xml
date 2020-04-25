@@ -62,11 +62,17 @@
 
         <!-- Redefined below-->
         <exclude name="TooManyMethods"/>
+        <exclude name="SignatureDeclareThrowsException"/>
     </rule>
     <rule ref="category/java/design.xml/TooManyMethods">
         <properties>
             <property name="violationSuppressXPath"
                       value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Test') or ends-with(@SimpleName, 'IT')]"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/SignatureDeclareThrowsException">
+        <properties>
+            <property name="IgnoreJUnitCompletely" value="true"/>
         </properties>
     </rule>
 
