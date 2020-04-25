@@ -13,6 +13,7 @@
         <!-- Redefined below-->
         <exclude name="JUnitTestsShouldIncludeAssert"/>
         <exclude name="JUnitTestContainsTooManyAsserts"/>
+        <exclude name="UnusedPrivateField"/>
     </rule>
     <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
         <properties>
@@ -23,6 +24,11 @@
     <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
         <properties>
             <property name="maximumAsserts" value="2"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField">
+        <properties>
+            <property name="ignoredAnnotations" value="org.mockito.Mock|lombok.Setter|lombok.Getter|lombok.Builder|lombok.Data|lombok.RequiredArgsConstructor|lombok.AllArgsConstructor|lombok.Value|lombok.NoArgsConstructor|java.lang.Deprecated|javafx.fxml.FXML|lombok.experimental.Delegate" />
         </properties>
     </rule>
 
