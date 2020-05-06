@@ -1,4 +1,4 @@
-package de.cotto;
+package de.cotto.playground.moduletwo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

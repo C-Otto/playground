@@ -1,0 +1,4 @@
+pmd {
+    ruleSetFiles = files('../config/pmd-ruleset.xml')
+    ruleSets = []
+}

@@ -1,0 +1,10 @@
+tasks.withType(JavaCompile) {
+    options.errorprone.nullaway {
+        excludedFieldAnnotations.add('org.mockito.Mock')
+        excludedFieldAnnotations.add('org.mockito.InjectMocks')
+    }
+}
+
+nullaway {
+    annotatedPackages.add('de.cotto')
+}

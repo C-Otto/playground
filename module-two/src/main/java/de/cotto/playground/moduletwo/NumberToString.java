@@ -1,4 +1,4 @@
-package de.cotto;
+package de.cotto.playground.moduletwo;
 
 public class NumberToString {
     public NumberToString() {

@@ -1,0 +1,11 @@
+spotbugsMain.reports.configure {
+    xml.enabled = false
+    html.enabled = true
+}
+spotbugsTest.reports.configure {
+    xml.enabled = false
+    html.enabled = true
+}
+spotbugs {
+    excludeFilter = file('../config/spotbugs-exclude.xml')
+}

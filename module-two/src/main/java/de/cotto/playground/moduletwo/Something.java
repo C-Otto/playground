@@ -1,4 +1,4 @@
-package de.cotto;
+package de.cotto.playground.moduletwo;
 
 import java.util.Objects;
 
