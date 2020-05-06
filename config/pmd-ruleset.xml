@@ -10,10 +10,7 @@
     </description>
 
     <rule ref="category/java/bestpractices.xml">
-        <!-- Redefined below-->
-        <exclude name="JUnitTestsShouldIncludeAssert"/>
-        <exclude name="JUnitTestContainsTooManyAsserts"/>
-        <exclude name="UnusedPrivateField"/>
+        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
     </rule>
     <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
         <properties>
@@ -38,11 +35,6 @@
         <exclude name="LocalVariableCouldBeFinal"/>
         <exclude name="UnnecessaryConstructor"/>
         <exclude name="CommentDefaultAccessModifier"/>
-
-        <!-- Redefined below-->
-        <exclude name="AtLeastOneConstructor"/>
-        <exclude name="DefaultPackage"/>
-        <exclude name="LongVariable"/>
     </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
@@ -58,17 +50,18 @@
     </rule>
     <rule ref="category/java/codestyle.xml/LongVariable">
         <properties>
-            <property name="minimum" value="21"/>
+            <property name="minimum" value="30"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/codestyle.xml/LinguisticNaming">
+        <properties>
+            <property name="ignoredAnnotations" value="java.lang.Override|org.junit.jupiter.api.Test"/>
         </properties>
     </rule>
 
     <rule ref="category/java/design.xml">
         <exclude name="LoosePackageCoupling"/>
         <exclude name="LawOfDemeter"/>
-
-        <!-- Redefined below-->
-        <exclude name="TooManyMethods"/>
-        <exclude name="SignatureDeclareThrowsException"/>
     </rule>
     <rule ref="category/java/design.xml/TooManyMethods">
         <properties>
