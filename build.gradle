@@ -48,6 +48,7 @@ subprojects {
     apply from: '../config/spotbugs.gradle'
     apply from: '../config/errorprone.gradle'
     apply from: '../config/cpd.gradle'
+    apply from: '../config/integration-tests.gradle'
 
     tasks.withType(JavaCompile) {
         options.errorprone.nullaway {
@@ -56,16 +57,13 @@ subprojects {
         options.compilerArgs << '-Werror'
     }
 
-    test {
+    tasks.withType(Test) {
         useJUnitPlatform()
         afterTest { descriptor, result ->
             if (result.resultType == TestResult.ResultType.SKIPPED) {
                 throw new GradleException('Do not ignore test cases')
             }
         }
-    }
-
-    tasks.withType(Test) {
         maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     }
 }
