@@ -1,0 +1,17 @@
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
+    testImplementation 'org.assertj:assertj-core:latest.release'
+    testImplementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    afterTest { descriptor, result ->
+        if (result.resultType == TestResult.ResultType.SKIPPED) {
+            throw new GradleException('Do not ignore test cases')
+        }
+    }
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+}

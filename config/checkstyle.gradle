@@ -1,3 +1,5 @@
+apply plugin: 'checkstyle'
+
 checkstyle {
     toolVersion 'latest.release'
     maxWarnings = 0

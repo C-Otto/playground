@@ -6,22 +6,10 @@ plugins {
 }
 
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'pmd'
-    apply plugin: 'jacoco'
-    apply plugin: 'com.github.spotbugs'
-    apply plugin: 'net.ltgt.errorprone'
-    apply plugin: 'net.ltgt.nullaway'
-    apply plugin: 'de.aaschmid.cpd'
-
-    if (it.name != "test-fixtures") {
-        apply plugin: 'checkstyle'
-        apply from: '../config/checkstyle.gradle'
-    }
-
     group 'de.cotto'
     version '1.0-SNAPSHOT'
 
+    apply plugin: 'java'
     java {
         sourceCompatibility = JavaVersion.VERSION_14
         targetCompatibility = JavaVersion.VERSION_14
@@ -32,38 +20,20 @@ subprojects {
         jcenter()
     }
 
-    dependencies {
-        errorprone 'com.google.errorprone:error_prone_core:latest.release'
-        errorprone 'com.uber.nullaway:nullaway:latest.release'
-
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
-        testImplementation 'org.assertj:assertj-core:latest.release'
-        testImplementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
-
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
-    }
+    apply from: '../config/tests.gradle'
+    apply from: '../config/integration-tests.gradle'
 
     apply from: '../config/pmd.gradle'
     apply from: '../config/jacoco.gradle'
     apply from: '../config/spotbugs.gradle'
     apply from: '../config/errorprone.gradle'
     apply from: '../config/cpd.gradle'
-    apply from: '../config/integration-tests.gradle'
+    apply from: '../config/checkstyle.gradle'
 
     tasks.withType(JavaCompile) {
         options.errorprone.nullaway {
             severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
         }
         options.compilerArgs << '-Werror'
-    }
-
-    tasks.withType(Test) {
-        useJUnitPlatform()
-        afterTest { descriptor, result ->
-            if (result.resultType == TestResult.ResultType.SKIPPED) {
-                throw new GradleException('Do not ignore test cases')
-            }
-        }
-        maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     }
 }

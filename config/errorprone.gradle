@@ -1,8 +1,16 @@
+apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'net.ltgt.nullaway'
+
 tasks.withType(JavaCompile) {
     options.errorprone.nullaway {
         excludedFieldAnnotations.add('org.mockito.Mock')
         excludedFieldAnnotations.add('org.mockito.InjectMocks')
     }
+}
+
+dependencies {
+    errorprone 'com.google.errorprone:error_prone_core:latest.release'
+    errorprone 'com.uber.nullaway:nullaway:latest.release'
 }
 
 nullaway {

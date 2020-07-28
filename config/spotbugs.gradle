@@ -1,3 +1,5 @@
+apply plugin: 'com.github.spotbugs'
+
 spotbugsMain.reports.configure {
     xml.enabled = false
     html.enabled = true

@@ -1,3 +1,5 @@
+apply plugin: 'jacoco'
+
 check.dependsOn jacocoTestCoverageVerification
 
 jacocoTestCoverageVerification {
