@@ -1,1 +1,5 @@
 apply plugin: 'java-library'
+
+dependencies {
+    testImplementation 'guru.nidi:code-assert-core:0.9.12'
+}
