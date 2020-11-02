@@ -1,4 +1,4 @@
-package de.cotto.playground.moduleone;
+package de.cotto.playground.architecture;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,11 +12,7 @@ import org.junit.jupiter.api.Test;
 public class PackageCycleTest {
     @Test
     void noPackageCycles() {
-        assertThat(hasPackageCycles()).isFalse();
-    }
-
-    public static boolean hasPackageCycles() {
-        return !getPackageCycles().isEmpty();
+        assertThat(getPackageCycles()).isEmpty();
     }
 
     private static Set<DependencyMap> getPackageCycles() {

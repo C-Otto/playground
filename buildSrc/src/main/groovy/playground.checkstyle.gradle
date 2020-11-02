@@ -1,4 +1,6 @@
-apply plugin: 'checkstyle'
+plugins {
+    id 'checkstyle'
+}
 
 checkstyle {
     toolVersion 'latest.release'

@@ -1,3 +1,7 @@
+plugins {
+    id 'java'
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
     testImplementation 'org.assertj:assertj-core:latest.release'

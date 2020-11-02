@@ -1,39 +1,8 @@
-plugins {
-    id 'net.ltgt.errorprone' version '1.3.0'
-    id 'net.ltgt.nullaway' version '1.0.2'
-    id 'com.github.spotbugs' version '4.5.1'
-    id 'de.aaschmid.cpd' version '3.1' apply false
-}
-
 subprojects {
-    group 'de.cotto'
-    version '1.0-SNAPSHOT'
-
-    apply plugin: 'java'
-    java {
-        sourceCompatibility = JavaVersion.VERSION_14
-        targetCompatibility = JavaVersion.VERSION_14
-        modularity.inferModulePath.set(true)
-    }
-
     repositories {
         jcenter()
     }
 
-    apply from: '../config/tests.gradle'
-    apply from: '../config/integration-tests.gradle'
-
-    apply from: '../config/pmd.gradle'
-    apply from: '../config/jacoco.gradle'
-    apply from: '../config/spotbugs.gradle'
-    apply from: '../config/errorprone.gradle'
-    apply from: '../config/cpd.gradle'
-    apply from: '../config/checkstyle.gradle'
-
-    tasks.withType(JavaCompile) {
-        options.errorprone.nullaway {
-            severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
-        }
-        options.compilerArgs << '-Werror'
-    }
+    group 'de.cotto'
+    version '1.0-SNAPSHOT'
 }

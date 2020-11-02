@@ -1,0 +1,32 @@
+plugins {
+    id 'playground.tests'
+}
+
+configurations {
+    sharedTestClasses {
+        canBeConsumed = false
+        canBeResolved = true
+    }
+    sharedTestRuntimeClasspath {
+        canBeConsumed = false
+        canBeResolved = true
+        extendsFrom testRuntimeClasspath
+    }
+}
+
+dependencies {
+    sharedTestClasses project(path: ':architecture-tests', configuration: 'exposedTestClasses')
+    sharedTestRuntimeClasspath project(path: ':architecture-tests', configuration: 'exposedTestRuntimeClasspath')
+}
+
+task sharedTest(type: Test) {
+    description = 'Runs the tests shared by all subprojects.'
+    group = 'verification'
+
+    testClassesDirs = configurations.sharedTestClasses
+    classpath = configurations.sharedTestRuntimeClasspath
+
+    classpath += sourceSets.test.runtimeClasspath
+    classpath += sourceSets.integrationTest.runtimeClasspath
+}
+check.dependsOn sharedTest

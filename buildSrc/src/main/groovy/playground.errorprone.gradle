@@ -1,5 +1,7 @@
-apply plugin: 'net.ltgt.errorprone'
-apply plugin: 'net.ltgt.nullaway'
+plugins {
+    id 'net.ltgt.errorprone'
+    id 'net.ltgt.nullaway'
+}
 
 tasks.withType(JavaCompile) {
     options.errorprone.nullaway {
@@ -15,4 +17,10 @@ dependencies {
 
 nullaway {
     annotatedPackages.add('de.cotto')
+}
+
+tasks.withType(JavaCompile) {
+    options.errorprone.nullaway {
+        severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
+    }
 }

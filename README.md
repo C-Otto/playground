@@ -9,3 +9,4 @@ A simple project combining
  * CPD
  * JaCoCo (code coverage)
  * Package cycle detection
+ * Convention plugins
