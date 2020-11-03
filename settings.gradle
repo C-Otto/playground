@@ -1,5 +1,5 @@
 rootProject.name = 'playground'
 include 'architecture-tests'
-include 'module-one'
-include 'module-two'
+include 'subproject-one'
+include 'subproject-two'
 
