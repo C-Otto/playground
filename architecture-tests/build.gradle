@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    testImplementation 'guru.nidi:code-assert-core:0.9.13'
+    testImplementation 'guru.nidi:code-assert-core:0.9.14'
 }
 
 configurations {
