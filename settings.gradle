@@ -3,3 +3,8 @@ include 'architecture-tests'
 include 'subproject-one'
 include 'subproject-two'
 
+dependencyResolutionManagement {
+    repositories {
+        jcenter()
+    }
+}
