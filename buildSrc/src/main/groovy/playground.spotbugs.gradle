@@ -13,3 +13,6 @@ spotbugsTest.reports.configure {
 spotbugs {
     excludeFilter = file('../config/spotbugs-exclude.xml')
 }
+dependencies {
+    spotbugs 'com.github.spotbugs:spotbugs:4.2.0'
+}
