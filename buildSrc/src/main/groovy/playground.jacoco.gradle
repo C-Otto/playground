@@ -6,7 +6,6 @@ check.dependsOn jacocoTestCoverageVerification
 
 tasks.withType(Test) {
     jacocoTestCoverageVerification.dependsOn it
-    jacocoTestCoverageVerification.executionData(it)
 }
 
 jacocoTestCoverageVerification {
