@@ -4,6 +4,7 @@ plugins {
 }
 
 tasks.withType(JavaCompile) {
+    options.errorprone.disable('EqualsGetClass')
     options.errorprone.nullaway {
         excludedFieldAnnotations.add('org.mockito.Mock')
         excludedFieldAnnotations.add('org.mockito.InjectMocks')
