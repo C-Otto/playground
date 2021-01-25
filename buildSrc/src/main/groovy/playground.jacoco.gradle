@@ -4,7 +4,13 @@ plugins {
 
 check.dependsOn jacocoTestCoverageVerification
 
+tasks.withType(Test) {
+    jacocoTestCoverageVerification.dependsOn it
+}
+
 jacocoTestCoverageVerification {
+    getExecutionData().setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+
     violationRules {
         rule {
             limit {
