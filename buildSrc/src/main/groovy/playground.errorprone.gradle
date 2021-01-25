@@ -8,6 +8,7 @@ tasks.withType(JavaCompile) {
         excludedFieldAnnotations.add('org.mockito.Mock')
         excludedFieldAnnotations.add('org.mockito.InjectMocks')
         excludedFieldAnnotations.add('org.junit.jupiter.api.io.TempDir')
+        excludedFieldAnnotations.add('org.springframework.boot.test.mock.mockito.MockBean')
         excludedFieldAnnotations.add('org.springframework.beans.factory.annotation.Autowired')
         excludedClassAnnotations.add('org.springframework.boot.context.properties.ConfigurationProperties')
     }
