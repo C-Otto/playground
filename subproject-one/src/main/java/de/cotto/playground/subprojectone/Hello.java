@@ -1,11 +1,10 @@
 package de.cotto.playground.subprojectone;
 
-public class Hello {
-    public Hello() {
-        // default constructor
-    }
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
+public class Hello {
     public String world() {
+        new ObjectMapper();
         return "Hello World";
     }
 }
