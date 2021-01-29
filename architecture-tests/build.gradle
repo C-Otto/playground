@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     testImplementation 'guru.nidi:code-assert-core:0.9.14'
+    testImplementation 'com.tngtech.archunit:archunit:0.15.0'
 }
 
 configurations {
