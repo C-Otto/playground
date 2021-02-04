@@ -35,6 +35,7 @@
         <exclude name="LocalVariableCouldBeFinal"/>
         <exclude name="UnnecessaryConstructor"/>
         <exclude name="CommentDefaultAccessModifier"/>
+        <exclude name="TooManyStaticImports"/>
     </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
