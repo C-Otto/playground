@@ -105,6 +105,12 @@
             <property name="IgnoreJUnitCompletely" value="true"/>
         </properties>
     </rule>
+    <rule ref="category/java/design.xml/DataClass">
+        <properties>
+            <property name="violationSuppressXPath"
+                      value="//ClassOrInterfaceDeclaration[ends-with(@SimpleName, 'Dto') or ends-with(@SimpleName, 'DTO')]"/>
+        </properties>
+    </rule>
 
     <rule ref="category/java/documentation.xml">
         <exclude name="CommentRequired"/>
