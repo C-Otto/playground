@@ -89,6 +89,11 @@
         <exclude name="LoosePackageCoupling"/>
         <exclude name="LawOfDemeter"/>
     </rule>
+    <rule ref="category/java/design.xml/UseUtilityClass">
+        <properties>
+            <property name="ignoredAnnotations" value="org.springframework.boot.autoconfigure.SpringBootApplication" />
+        </properties>
+    </rule>
     <rule ref="category/java/design.xml/TooManyMethods">
         <properties>
             <property name="violationSuppressXPath"
@@ -98,11 +103,6 @@
     <rule ref="category/java/design.xml/SignatureDeclareThrowsException">
         <properties>
             <property name="IgnoreJUnitCompletely" value="true"/>
-        </properties>
-    </rule>
-    <rule ref="category/java/design.xml/UseUtilityClass">
-        <properties>
-            <property name="ignoredAnnotations" value="org.springframework.boot.autoconfigure.SpringBootApplication" />
         </properties>
     </rule>
 
