@@ -29,4 +29,5 @@ task sharedTest(type: Test) {
     classpath += sourceSets.test.runtimeClasspath
     classpath += sourceSets.integrationTest.runtimeClasspath
 }
+sharedTest.dependsOn project(':architecture-tests').processTestResources
 check.dependsOn sharedTest
