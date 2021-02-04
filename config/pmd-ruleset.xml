@@ -57,6 +57,11 @@
             <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]*" />
         </properties>
     </rule>
+    <rule ref="category/java/codestyle.xml/ShortMethodName">
+        <properties>
+            <property name="minimum" value="2" />
+        </properties>
+    </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
             <property name="violationSuppressXPath"
