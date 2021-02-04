@@ -37,6 +37,16 @@
         <exclude name="CommentDefaultAccessModifier"/>
         <exclude name="TooManyStaticImports"/>
     </rule>
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions">
+        <properties>
+            <property name="methodPattern" value="[a-z][a-zA-Z0-9]*" />
+            <property name="staticPattern" value="[a-z][a-zA-Z0-9]*" />
+            <property name="nativePattern" value="[a-z][a-zA-Z0-9]*" />
+            <property name="junit3TestPattern" value="test[A-Z0-9][_a-zA-Z0-9]*" />
+            <property name="junit4TestPattern" value="[a-z][_a-zA-Z0-9]*" />
+            <property name="junit5TestPattern" value="[a-z][_a-zA-Z0-9]*" />
+        </properties>
+    </rule>
     <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
         <properties>
             <property name="violationSuppressXPath"
