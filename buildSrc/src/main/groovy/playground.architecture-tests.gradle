@@ -20,6 +20,7 @@ dependencies {
 }
 
 task sharedTest(type: Test) {
+    dependsOn(':architecture-tests:processTestResources')
     description = 'Runs the tests shared by all subprojects.'
     group = 'verification'
 
@@ -29,5 +30,4 @@ task sharedTest(type: Test) {
     classpath += sourceSets.test.runtimeClasspath
     classpath += sourceSets.integrationTest.runtimeClasspath
 }
-sharedTest.dependsOn project(':architecture-tests').processTestResources
 check.dependsOn sharedTest
