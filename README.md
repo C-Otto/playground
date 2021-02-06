@@ -10,3 +10,4 @@ A simple project combining
  * JaCoCo (code coverage)
  * Package cycle detection
  * Convention plugins
+ * SLF4J Test

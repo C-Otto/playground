@@ -3,7 +3,7 @@ package de.cotto.playground.subprojectwo;
 import de.cotto.playground.subprojectone.Hello;
 
 public class HelloWorld {
-    HelloWorld() {
+    public HelloWorld() {
         // default constructor
     }
 
