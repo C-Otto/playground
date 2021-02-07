@@ -23,3 +23,9 @@ task integrationTest(type: Test) {
     shouldRunAfter test
 }
 check.dependsOn integrationTest
+
+integrationTest {
+    testlogger {
+        slowThreshold 2000
+    }
+}

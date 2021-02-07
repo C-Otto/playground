@@ -2,10 +2,15 @@ plugins {
     id 'java'
 }
 
+plugins {
+    id 'com.adarshr.test-logger'
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
     testImplementation 'org.assertj:assertj-core:latest.release'
     testImplementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
+    testImplementation 'org.slf4j:slf4j-nop:1.7.30'
 
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
 }
@@ -18,4 +23,10 @@ tasks.withType(Test) {
         }
     }
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+}
+
+testlogger {
+    theme 'standard-parallel'
+    slowThreshold 1000
+    showSimpleNames true
 }
