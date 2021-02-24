@@ -22,7 +22,6 @@ tasks.withType(Test) {
             throw new GradleException('Do not ignore test cases')
         }
     }
-    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
 testlogger {
