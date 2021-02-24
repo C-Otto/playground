@@ -6,6 +6,6 @@ include 'application'
 
 dependencyResolutionManagement {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
