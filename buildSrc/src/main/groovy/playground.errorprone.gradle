@@ -3,7 +3,7 @@ plugins {
     id 'net.ltgt.nullaway'
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.errorprone.disable('EqualsGetClass')
     options.errorprone.nullaway {
         excludedFieldAnnotations.add('org.mockito.Mock')
@@ -24,7 +24,7 @@ nullaway {
     annotatedPackages.add('de.cotto')
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.errorprone.nullaway {
         severity = net.ltgt.gradle.errorprone.CheckSeverity.ERROR
     }

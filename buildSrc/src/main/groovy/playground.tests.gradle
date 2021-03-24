@@ -15,7 +15,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     afterTest { descriptor, result ->
         if (result.resultType == TestResult.ResultType.SKIPPED) {

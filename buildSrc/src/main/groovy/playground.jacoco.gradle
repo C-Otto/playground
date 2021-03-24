@@ -4,7 +4,7 @@ plugins {
 
 check.dependsOn jacocoTestCoverageVerification
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     jacocoTestCoverageVerification.dependsOn it
 }
 
