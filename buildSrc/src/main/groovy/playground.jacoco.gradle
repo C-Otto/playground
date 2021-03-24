@@ -6,6 +6,7 @@ check.dependsOn jacocoTestCoverageVerification
 
 tasks.withType(Test).configureEach {
     jacocoTestCoverageVerification.dependsOn it
+    jacocoTestReport.mustRunAfter it
 }
 
 jacocoTestCoverageVerification {
