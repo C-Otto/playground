@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'de.aaschmid:gradle-cpd-plugin:3.1'
+    implementation 'de.aaschmid:gradle-cpd-plugin:3.2'
     implementation 'gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.0'
     implementation 'net.ltgt.gradle:gradle-errorprone-plugin:2.0.1'
     implementation 'net.ltgt.gradle:gradle-nullaway-plugin:1.0.2'
