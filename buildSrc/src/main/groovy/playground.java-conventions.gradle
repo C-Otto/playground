@@ -1,14 +1,6 @@
 plugins {
     id 'java'
-    id 'playground.tests'
-    id 'playground.integration-tests'
-    id 'playground.architecture-tests'
-    id 'playground.pmd'
-    id 'playground.jacoco'
-    id 'playground.spotbugs'
     id 'playground.errorprone'
-    id 'playground.cpd'
-    id 'playground.checkstyle'
 }
 
 java {
