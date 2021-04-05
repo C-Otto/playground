@@ -1,8 +1,5 @@
 rootProject.name = 'playground'
-include 'architecture-tests'
 include 'subproject-one'
-include 'subproject-two'
-include 'application'
 
 dependencyResolutionManagement {
     repositories {
