@@ -6,7 +6,3 @@ plugins {
 application {
     mainClass.set('de.cotto.playground.Main')
 }
-
-dependencies {
-    implementation project(':subproject-two')
-}
