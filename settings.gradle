@@ -1,6 +1,5 @@
 rootProject.name = 'playground'
 include 'subproject-one'
-include 'subproject-one:nested'
 include 'subproject-two'
 include 'application'
 
