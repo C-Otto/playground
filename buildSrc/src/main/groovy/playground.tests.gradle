@@ -2,10 +2,6 @@ plugins {
     id 'java'
 }
 
-plugins {
-    id 'com.adarshr.test-logger'
-}
-
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
     testImplementation 'org.assertj:assertj-core:latest.release'
@@ -22,10 +18,4 @@ tasks.withType(Test).configureEach {
             throw new GradleException('Do not ignore test cases')
         }
     }
-}
-
-testlogger {
-    theme 'standard-parallel'
-    slowThreshold 1000
-    showSimpleNames true
 }
