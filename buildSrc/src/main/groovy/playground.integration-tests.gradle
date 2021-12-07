@@ -4,8 +4,6 @@ plugins {
 
 sourceSets {
     integrationTest {
-        compileClasspath += sourceSets.main.output
-        runtimeClasspath += sourceSets.main.output
     }
 }
 
@@ -20,6 +18,5 @@ task integrationTest(type: Test) {
 
     testClassesDirs = sourceSets.integrationTest.output.classesDirs
     classpath = sourceSets.integrationTest.runtimeClasspath
-    shouldRunAfter test
 }
 check.dependsOn integrationTest
