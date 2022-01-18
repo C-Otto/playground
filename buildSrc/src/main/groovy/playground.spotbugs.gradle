@@ -14,5 +14,5 @@ spotbugs {
     excludeFilter = file("${rootDir}/config/spotbugs-exclude.xml")
 }
 dependencies {
-    spotbugs 'com.github.spotbugs:spotbugs:4.2.1'
+    spotbugs 'com.github.spotbugs:spotbugs:4.5.3'
 }
