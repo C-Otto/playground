@@ -1,0 +1,22 @@
+plugins {
+    id 'playground.tests'
+    id 'info.solidsoft.pitest'
+}
+
+pitest {
+    targetClasses = ['de.cotto.*']
+    pitestVersion = '1.7.3'
+    junit5PluginVersion = '0.15'
+    outputFormats = ['XML', 'HTML']
+    timestampedReports = false
+    failWhenNoMutations = false
+    excludedMethods = ['hashCode']
+    threads = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    testStrengthThreshold = 100
+}
+
+tasks.withType(info.solidsoft.gradle.pitest.PitestTask).configureEach {
+    dependsOn test
+}
+
+check.dependsOn 'pitest'

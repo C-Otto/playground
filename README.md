@@ -11,3 +11,4 @@ A simple project combining
  * Package cycle detection
  * Convention plugins
  * SLF4J Test
+ * Mutation Tests (PIT)

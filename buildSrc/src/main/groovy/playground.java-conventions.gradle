@@ -9,6 +9,7 @@ plugins {
     id 'playground.errorprone'
     id 'playground.cpd'
     id 'playground.checkstyle'
+    id 'playground.mutation-tests'
 }
 
 java {
