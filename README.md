@@ -10,5 +10,6 @@ A simple project combining
  * JaCoCo (code coverage)
  * Package cycle detection
  * Convention plugins
+ * Integration Tests (via Test Suite Plugin)
  * SLF4J Test
  * Mutation Tests (PIT)

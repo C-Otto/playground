@@ -15,8 +15,15 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
 }
 
+testing {
+    suites {
+        test {
+            useJUnitJupiter()
+        }
+    }
+}
+
 tasks.withType(Test).configureEach {
-    useJUnitPlatform()
     afterTest { descriptor, result ->
         if (result.resultType == TestResult.ResultType.SKIPPED) {
             throw new GradleException('Do not ignore test cases')
