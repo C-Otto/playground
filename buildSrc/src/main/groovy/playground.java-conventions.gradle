@@ -5,11 +5,11 @@ plugins {
     id 'playground.architecture-tests'
     id 'playground.pmd'
     id 'playground.jacoco'
-    id 'playground.spotbugs'
     id 'playground.errorprone'
     id 'playground.cpd'
     id 'playground.checkstyle'
     id 'playground.mutation-tests'
+    id 'playground.spotbugs'
 }
 
 java {
