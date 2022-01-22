@@ -21,11 +21,6 @@ testing {
     }
 }
 
-configurations {
-    integrationTestImplementation.extendsFrom testImplementation
-    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
-}
-
 tasks.named('check') {
     dependsOn(testing.suites.integrationTest)
 }

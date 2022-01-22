@@ -6,19 +6,20 @@ plugins {
     id 'com.adarshr.test-logger'
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
-    testImplementation 'org.assertj:assertj-core:latest.release'
-    testImplementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
-    testImplementation 'org.slf4j:slf4j-nop:1.7.33'
-
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
-}
-
 testing {
     suites {
         test {
             useJUnitJupiter()
+        }
+        withType(JvmTestSuite) {
+            dependencies {
+                implementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
+                implementation 'org.assertj:assertj-core:latest.release'
+                implementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
+                implementation 'org.slf4j:slf4j-nop:1.7.33'
+
+                runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
+            }
         }
     }
 }
