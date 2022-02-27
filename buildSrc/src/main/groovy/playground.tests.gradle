@@ -33,4 +33,5 @@ testlogger {
     theme 'standard-parallel'
     slowThreshold 1000
     showSimpleNames true
+    showOnlySlow true
 }
