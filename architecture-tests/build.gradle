@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    testImplementation 'com.tngtech.archunit:archunit:0.23.1'
+    testImplementation 'com.tngtech.archunit:archunit:1.0.0'
 }
 
 configurations {
