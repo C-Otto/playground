@@ -6,5 +6,5 @@ pmd {
     ruleSetFiles = files("${rootDir}/config/pmd-ruleset.xml")
     ruleSets = []
     consoleOutput = true
-    toolVersion = '6.50.0'
+    toolVersion = '6.51.0'
 }
