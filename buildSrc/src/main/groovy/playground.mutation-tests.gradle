@@ -1,3 +1,5 @@
+import info.solidsoft.gradle.pitest.PitestTask
+
 plugins {
     id 'playground.tests'
     id 'info.solidsoft.pitest'
@@ -15,7 +17,7 @@ pitest {
     testStrengthThreshold = 100
 }
 
-tasks.withType(info.solidsoft.gradle.pitest.PitestTask).configureEach {
+tasks.withType(PitestTask).configureEach {
     dependsOn test
 }
 
