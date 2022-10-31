@@ -13,9 +13,10 @@ testing {
         }
         withType(JvmTestSuite) {
             dependencies {
-                implementation 'org.assertj:assertj-core:latest.release'
-                implementation 'nl.jqno.equalsverifier:equalsverifier:latest.release'
-                implementation 'org.slf4j:slf4j-nop:1.7.33'
+                implementation platform(project(':platform'))
+                implementation 'org.assertj:assertj-core'
+                implementation 'nl.jqno.equalsverifier:equalsverifier'
+                implementation 'org.slf4j:slf4j-nop'
             }
         }
     }

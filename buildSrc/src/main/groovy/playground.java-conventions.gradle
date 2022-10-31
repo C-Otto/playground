@@ -12,6 +12,10 @@ plugins {
     id 'playground.spotbugs'
 }
 
+dependencies {
+    implementation platform(project(':platform'))
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17

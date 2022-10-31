@@ -9,9 +9,9 @@ application {
 
 dependencies {
     implementation project(':subproject-two')
-    implementation 'org.slf4j:slf4j-api:1.7.33'
-    runtimeOnly 'ch.qos.logback:logback-classic:1.2.10'
-    integrationTestImplementation 'uk.org.lidalia:slf4j-test:1.2.0'
+    implementation 'org.slf4j:slf4j-api'
+    runtimeOnly 'ch.qos.logback:logback-classic'
+    integrationTestImplementation 'uk.org.lidalia:slf4j-test'
     configurations.getByName('integrationTestRuntimeOnly').exclude group: 'ch.qos.logback', module: 'logback-classic'
     configurations.getByName('integrationTestRuntimeOnly').exclude group: 'org.slf4j', module: 'slf4j-nop'
 }
