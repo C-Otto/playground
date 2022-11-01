@@ -13,7 +13,6 @@ testing {
         }
         withType(JvmTestSuite) {
             dependencies {
-                implementation platform(project(':platform'))
                 implementation 'org.assertj:assertj-core'
                 implementation 'nl.jqno.equalsverifier:equalsverifier'
                 implementation 'org.slf4j:slf4j-nop'

@@ -12,8 +12,10 @@ plugins {
     id 'playground.spotbugs'
 }
 
+group = 'de.cotto.playground'
+
 dependencies {
-    implementation platform(project(':platform'))
+    implementation platform('de.cotto.playground:platform')
 }
 
 java {

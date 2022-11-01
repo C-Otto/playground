@@ -1,5 +1,4 @@
 rootProject.name = 'playground'
-include 'platform'
 include 'architecture-tests'
 include 'subproject-one'
 include 'subproject-one:nested'
@@ -10,4 +9,5 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
     }
+    includeBuild('./platform')
 }

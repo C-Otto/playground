@@ -7,7 +7,7 @@ testing {
         integrationTest(JvmTestSuite) {
             testType = TestSuiteType.INTEGRATION_TEST
             dependencies {
-                implementation platform(project(':platform'))
+                implementation project.dependencies.platform('de.cotto.playground:platform')
                 implementation project()
             }
 

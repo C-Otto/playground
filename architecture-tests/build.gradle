@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     testImplementation 'com.tngtech.archunit:archunit'
+    testImplementation project.dependencies.platform('de.cotto.playground:platform')
 }
 
 configurations {
