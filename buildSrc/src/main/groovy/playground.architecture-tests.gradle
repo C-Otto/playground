@@ -19,7 +19,7 @@ dependencies {
     sharedTestRuntimeClasspath project(path: ':architecture-tests', configuration: 'exposedTestRuntimeClasspath')
 }
 
-task sharedTest(type: Test) {
+tasks.register('sharedTest', Test) {
     dependsOn(':architecture-tests:processTestResources')
     description = 'Runs the tests shared by all subprojects.'
     group = 'verification'
