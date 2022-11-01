@@ -16,10 +16,9 @@ public final class Something {
         if (this == other) {
             return true;
         }
-        if (!(other instanceof Something)) {
+        if (!(other instanceof Something something)) {
             return false;
         }
-        Something something = (Something) other;
         return fieldB == something.fieldB && fieldA.equals(something.fieldA);
     }
 
