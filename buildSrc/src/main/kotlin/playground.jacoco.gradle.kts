@@ -11,7 +11,7 @@ tasks.withType<Test>().configureEach {
 }
 
 tasks.withType<JacocoCoverageVerification>().configureEach {
-    getExecutionData().setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+    executionData.setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
 
     violationRules {
         rule {
