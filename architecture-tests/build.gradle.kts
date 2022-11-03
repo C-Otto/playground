@@ -17,13 +17,17 @@ val exposedTestRuntimeClasspath by configurations.creating {
 }
 
 artifacts {
-    sourceSets.getByName("test").output.classesDirs.files.forEach {
-        add("exposedTestClasses", it) {
-            builtBy(tasks.named("compileTestJava"))
+    sourceSets.named("test") {
+        output.classesDirs.files.forEach {
+            add("exposedTestClasses", it) {
+                builtBy(tasks.named("compileTestJava"))
+            }
         }
     }
-    sourceSets.getByName("test").runtimeClasspath.files.forEach {
-        add("exposedTestRuntimeClasspath", it) {
+    sourceSets.named("test") {
+        runtimeClasspath.files.forEach {
+            add("exposedTestRuntimeClasspath", it) {
+            }
         }
     }
 }
