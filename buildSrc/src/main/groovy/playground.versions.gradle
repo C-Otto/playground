@@ -3,7 +3,7 @@ checkstyle {
 }
 
 spotbugs {
-    toolVersion = '4.7.2'
+    toolVersion = '4.7.3'
 }
 
 pmd {
@@ -15,10 +15,10 @@ cpd {
 }
 
 pitest {
-    pitestVersion = '1.7.6'
-    junit5PluginVersion = '0.15'
+    pitestVersion = 'latest.release'
+    junit5PluginVersion = 'latest.release'
 }
 
 jacoco {
-    toolVersion = '0.8.8'
+    toolVersion = 'latest.release'
 }
