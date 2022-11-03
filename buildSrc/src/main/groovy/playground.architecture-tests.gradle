@@ -20,6 +20,8 @@ dependencies {
 }
 
 tasks.register('sharedTest', Test) {
+    useJUnitPlatform()
+
     dependsOn(':architecture-tests:processTestResources')
     description = 'Runs the tests shared by all subprojects.'
     group = 'verification'
