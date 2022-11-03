@@ -1,5 +1,5 @@
 plugins {
-    id 'checkstyle'
+    checkstyle
 }
 
 checkstyle {

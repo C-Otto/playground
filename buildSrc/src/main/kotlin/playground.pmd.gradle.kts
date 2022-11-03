@@ -1,9 +1,9 @@
 plugins {
-    id 'pmd'
+    pmd
 }
 
 pmd {
     ruleSetFiles = files("${rootDir}/config/pmd-ruleset.xml")
-    ruleSets = []
-    consoleOutput = true
+    ruleSets = listOf()
+    isConsoleOutput = true
 }
