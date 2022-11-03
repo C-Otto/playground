@@ -14,5 +14,4 @@ tasks.withType(SpotBugsTask).forEach { spotbugsTask ->
 }
 spotbugs {
     excludeFilter = file("${rootDir}/config/spotbugs-exclude.xml")
-    toolVersion = '4.7.2'
 }

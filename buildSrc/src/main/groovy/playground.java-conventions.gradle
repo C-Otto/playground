@@ -10,6 +10,7 @@ plugins {
     id 'playground.checkstyle'
     id 'playground.mutation-tests'
     id 'playground.spotbugs'
+    id 'playground.versions'
 }
 
 group = 'de.cotto.playground'

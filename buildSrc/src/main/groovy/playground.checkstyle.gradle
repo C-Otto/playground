@@ -3,6 +3,5 @@ plugins {
 }
 
 checkstyle {
-    toolVersion 'latest.release'
     maxWarnings = 0
 }
