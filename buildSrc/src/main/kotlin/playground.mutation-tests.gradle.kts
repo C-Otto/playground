@@ -1,4 +1,5 @@
 import info.solidsoft.gradle.pitest.PitestTask
+import kotlin.math.max
 
 plugins {
     id("playground.tests")
@@ -11,7 +12,7 @@ pitest {
     timestampedReports.set(false)
     failWhenNoMutations.set(false)
     excludedMethods.set(listOf("hashCode"))
-    threads.set(Math.max(Runtime.getRuntime().availableProcessors() / 2, 1))
+    threads.set(max(Runtime.getRuntime().availableProcessors() / 2, 1))
     testStrengthThreshold.set(100)
 }
 
