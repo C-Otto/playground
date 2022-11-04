@@ -2,7 +2,7 @@ plugins {
     jacoco
 }
 tasks.named("check") {
-    dependsOn(tasks.named("jacocoTestCoverageVerification"))
+    dependsOn(tasks.withType<JacocoCoverageVerification>())
 }
 
 tasks.withType<JacocoReport>().configureEach {
