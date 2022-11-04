@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     testImplementation("com.tngtech.archunit:archunit")
-    testImplementation(project.dependencies.platform("de.cotto.playground:platform"))
+    testImplementation(platform("de.cotto.playground:platform"))
 }
 
 val exposedTestClasses by configurations.creating {
