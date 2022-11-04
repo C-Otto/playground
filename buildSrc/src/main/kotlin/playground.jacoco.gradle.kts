@@ -5,12 +5,12 @@ tasks.named("check") {
     dependsOn(tasks.named("jacocoTestCoverageVerification"))
 }
 
-tasks.withType<Test>().configureEach {
-    tasks.getByName("jacocoTestCoverageVerification").dependsOn(this)
-    tasks.getByName("jacocoTestReport").mustRunAfter(this)
+tasks.withType<JacocoReport>().configureEach {
+    mustRunAfter(tasks.withType<Test>())
 }
 
 tasks.withType<JacocoCoverageVerification>().configureEach {
+    dependsOn(tasks.withType<Test>())
     executionData.setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
 
     violationRules {
