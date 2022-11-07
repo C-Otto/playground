@@ -7,11 +7,11 @@ dependencies {
     testImplementation(platform("de.cotto.playground:platform"))
 }
 
-val exposedTestClasses by configurations.creating {
+val exposedTestClasses: Configuration by configurations.creating {
     isCanBeConsumed = true
     isCanBeResolved = false
 }
-val exposedTestRuntimeClasspath by configurations.creating {
+val exposedTestRuntimeClasspath: Configuration by configurations.creating {
     isCanBeConsumed = true
     isCanBeResolved = false
 }

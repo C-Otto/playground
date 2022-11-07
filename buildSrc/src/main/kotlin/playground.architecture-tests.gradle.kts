@@ -2,11 +2,11 @@ plugins {
     id("playground.tests")
 }
 
-val sharedTestClasses by configurations.creating {
+val sharedTestClasses: Configuration by configurations.creating {
     isCanBeConsumed = false
     isCanBeResolved = true
 }
-val sharedTestRuntimeClasspath by configurations.creating {
+val sharedTestRuntimeClasspath: Configuration by configurations.creating {
     isCanBeConsumed = false
     isCanBeResolved = true
     extendsFrom(configurations.testRuntimeClasspath.get())
