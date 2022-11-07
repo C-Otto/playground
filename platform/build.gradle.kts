@@ -15,7 +15,7 @@ dependencies {
         api("de.aaschmid:gradle-cpd-plugin:3.3")
         api("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.0")
         api("net.ltgt.gradle:gradle-errorprone-plugin:3.0.1")
-        api("net.ltgt.gradle:gradle-nullaway-plugin:1.4.0")
+        api("net.ltgt.gradle:gradle-nullaway-plugin:1.5.0")
         api("nl.jqno.equalsverifier:equalsverifier:latest.release")
         api("org.assertj:assertj-core:latest.release")
         api("org.slf4j:slf4j-api:1.7.33")
