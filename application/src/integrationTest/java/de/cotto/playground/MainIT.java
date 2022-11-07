@@ -1,11 +1,11 @@
 package de.cotto.playground;
 
+import static com.github.valfirst.slf4jtest.LoggingEvent.info;
 import static org.assertj.core.api.Assertions.assertThat;
-import static uk.org.lidalia.slf4jtest.LoggingEvent.info;
 
+import com.github.valfirst.slf4jtest.TestLogger;
+import com.github.valfirst.slf4jtest.TestLoggerFactory;
 import org.junit.jupiter.api.Test;
-import uk.org.lidalia.slf4jtest.TestLogger;
-import uk.org.lidalia.slf4jtest.TestLoggerFactory;
 
 class MainIT {
     private final TestLogger logger = TestLoggerFactory.getTestLogger(Main.class);

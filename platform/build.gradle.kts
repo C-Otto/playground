@@ -18,8 +18,8 @@ dependencies {
         api("net.ltgt.gradle:gradle-nullaway-plugin:1.5.0")
         api("nl.jqno.equalsverifier:equalsverifier:latest.release")
         api("org.assertj:assertj-core:latest.release")
-        api("org.slf4j:slf4j-api:1.7.33")
-        api("org.slf4j:slf4j-nop:1.7.33")
-        api("uk.org.lidalia:slf4j-test:1.2.0")
+        api("org.slf4j:slf4j-api:2.0.3")
+        api("org.slf4j:slf4j-nop:2.0.3")
+        api("com.github.valfirst:slf4j-test:2.6.1")
     }
 }
