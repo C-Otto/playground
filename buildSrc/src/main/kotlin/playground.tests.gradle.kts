@@ -25,6 +25,7 @@ tasks.withType<Test>().configureEach {
             throw GradleException("Do not ignore test cases")
         }
     }))
+    systemProperties = mapOf("junit.jupiter.displayname.generator.default" to "org.junit.jupiter.api.DisplayNameGenerator\$ReplaceUnderscores")
 }
 
 testlogger {
