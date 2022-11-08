@@ -5,6 +5,7 @@ plugins {
 testing {
     suites {
         this.register("integrationTest", JvmTestSuite::class) {
+            testType.set(TestSuiteType.INTEGRATION_TEST)
             dependencies {
                 implementation(project.dependencies.platform("de.cotto.playground:platform"))
                 implementation(project())
