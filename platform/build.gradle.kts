@@ -10,7 +10,7 @@ dependencies {
         api("com.adarshr:gradle-test-logger-plugin:3.2.0")
         api("com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.13")
         api("com.google.errorprone:error_prone_core:latest.release")
-        api("com.tngtech.archunit:archunit:1.0.0")
+        api("com.tngtech.archunit:archunit:1.0.1")
         api("com.uber.nullaway:nullaway:latest.release")
         api("de.aaschmid:gradle-cpd-plugin:3.3")
         api("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.0")
