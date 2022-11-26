@@ -14,11 +14,11 @@ configure<SpotBugsExtension> {
 }
 
 configure<PmdExtension> {
-    toolVersion = "6.51.0"
+    toolVersion = "6.52.0"
 }
 
 configure<CpdExtension> {
-    toolVersion = "6.51.0"
+    toolVersion = "6.52.0"
 }
 
 configure<PitestPluginExtension> {
