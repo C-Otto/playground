@@ -13,7 +13,7 @@ dependencies {
         api("com.tngtech.archunit:archunit:1.0.1")
         api("com.uber.nullaway:nullaway:latest.release")
         api("de.aaschmid:gradle-cpd-plugin:3.3")
-        api("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.0")
+        api("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11")
         api("net.ltgt.gradle:gradle-errorprone-plugin:3.0.1")
         api("net.ltgt.gradle:gradle-nullaway-plugin:1.5.0")
         api("nl.jqno.equalsverifier:equalsverifier:latest.release")
