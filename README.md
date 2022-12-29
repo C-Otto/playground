@@ -1,6 +1,6 @@
 # Playground
 A simple project combining
- * Gradle 7
+ * Gradle 8
  * Java 17 with modules support (JPMS / Project Jigsaw)
  * Error Prone (including NullAway)
  * SpotBugs
