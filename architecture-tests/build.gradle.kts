@@ -1,10 +1,9 @@
 plugins {
-    id("playground.tests")
+    id("de.c-otto.java-conventions")
 }
 
 dependencies {
     testImplementation("com.tngtech.archunit:archunit")
-    testImplementation(platform("de.cotto.playground:platform"))
 }
 
 val exposedTestClasses: Configuration by configurations.creating {
@@ -30,4 +29,9 @@ artifacts {
             }
         }
     }
+}
+
+
+tasks.jacocoTestCoverageVerification {
+    enabled = false
 }

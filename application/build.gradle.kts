@@ -1,5 +1,5 @@
 plugins {
-    id("playground.java-conventions")
+    id("de.c-otto.playground.java-conventions")
     application
 }
 

@@ -1,6 +1,9 @@
 plugins {
-    id("playground.tests")
+    java
 }
+
+// https://github.com/gradle/gradle/issues/22468
+apply(plugin = "de.c-otto.java-conventions")
 
 val sharedTestClasses: Configuration by configurations.creating {
     isCanBeConsumed = false
@@ -17,7 +20,6 @@ dependencies {
     sharedTestRuntimeClasspath(project(path = ":architecture-tests", configuration = "exposedTestRuntimeClasspath"))
 }
 
-
 val sharedTest = tasks.register<Test>("sharedTest") {
     useJUnitPlatform()
     dependsOn(":architecture-tests:processTestResources")
@@ -30,6 +32,7 @@ val sharedTest = tasks.register<Test>("sharedTest") {
     classpath += sourceSets.getByName("test").runtimeClasspath
     classpath += sourceSets.getByName("integrationTest").runtimeClasspath
 }
+
 tasks.named("check") {
     dependsOn(sharedTest)
 }

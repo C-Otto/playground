@@ -10,7 +10,8 @@ import org.junit.jupiter.api.Test;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
 
-public class ArchUnitTest {
+@SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+class ArchUnitTest {
 
     private JavaClasses importedClasses;
 

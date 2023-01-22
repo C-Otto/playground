@@ -1,8 +1,8 @@
 package de.cotto.playground.subprojectwo;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class HelloWorldTest {
     @Test
