@@ -4,6 +4,7 @@ plugins {
 
 repositories {
     gradlePluginPortal()
+    mavenCentral()
 }
 
 val conventionsVersion = "2023.01.29_3"
