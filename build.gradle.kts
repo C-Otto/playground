@@ -1,3 +1,2 @@
-subprojects {
-    version = "1.0-SNAPSHOT"
-}
+group = "de.c-otto"
+version = "1.0-SNAPSHOT"
