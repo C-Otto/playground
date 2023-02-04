@@ -9,9 +9,9 @@ application {
 
 dependencies {
     implementation(project(":subproject-two"))
-    implementation(libs.slf4jApi)
+    implementation("org.slf4j:slf4j-api")
     runtimeOnly("ch.qos.logback:logback-classic")
-    integrationTestImplementation(libs.testing.slf4jTest)
+    integrationTestImplementation("com.github.valfirst:slf4j-test")
     configurations.named("integrationTestRuntimeOnly") {
         exclude(group = "ch.qos.logback", module = "logback-classic")
         exclude(group = "org.slf4j", module = "slf4j-nop")

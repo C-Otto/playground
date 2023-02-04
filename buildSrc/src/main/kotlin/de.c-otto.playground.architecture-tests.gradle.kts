@@ -1,9 +1,7 @@
 plugins {
-    java
+    id("de.c-otto.java-conventions")
 }
 
-// https://github.com/gradle/gradle/issues/22468
-apply(plugin = "de.c-otto.java-conventions")
 
 val sharedTestClasses: Configuration by configurations.creating {
     isCanBeConsumed = false

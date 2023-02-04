@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    testImplementation(libs.testing.archunit)
+    testImplementation("com.tngtech.archunit:archunit")
 }
 
 val exposedTestClasses: Configuration by configurations.creating {

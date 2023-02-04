@@ -7,7 +7,7 @@ repositories {
     mavenCentral()
 }
 
-val conventionsVersion = "2023.01.30"
+val conventionsVersion = "2023.02.04"
 
 dependencies {
     implementation("de.c-otto:java-conventions:$conventionsVersion")
